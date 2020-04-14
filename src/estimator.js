@@ -14,7 +14,8 @@ const covid19ImpactEstimator = (data) => {
   impact.currentlyInfected = data.reportedCases * 10;
   severeImpact.currentlyInfected = data.reportedCases * 50;
   impact.infectionsByRequestedTime = impact.currentlyInfected * 2 ** factor;
-  severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfected * 2 ** factor;
+  severeImpact.infectionsByRequestedTime =
+    severeImpact.currentlyInfected * 2 ** factor;
 
   impact.severeCasesByRequestedTime = Math.trunc(
     impact.infectionsByRequestedTime * 0.15
@@ -22,10 +23,12 @@ const covid19ImpactEstimator = (data) => {
   severeImpact.severeCasesByRequestedTime = Math.trunc(
     severeImpact.infectionsByRequestedTime * 0.15
   );
-  impact.hospitalBedsByrequestedTime = impact.severeCasesByRequestedTime
-  * Math.trunc(data.totalhospitalBeds * 0.35);
-  severeImpact.hospitalBedsByrequestedTime = severeImpact.severeCasesByRequestedTime
-  * Math.trunc(data.totalhospitalBeds * 0.35);
+  impact.hospitalBedsByrequestedTime =
+    impact.severeCasesByRequestedTime *
+    Math.trunc(data.totalhospitalBeds * 0.35);
+  severeImpact.hospitalBedsByrequestedTime =
+    severeImpact.severeCasesByRequestedTime *
+    Math.trunc(data.totalhospitalBeds * 0.35);
 
   impact.casesForICUByRequestedTime = Math.trunc(
     impact.infectionsByRequestedTime * 0.5
@@ -48,16 +51,16 @@ const covid19ImpactEstimator = (data) => {
     period = 30;
   }
   impact.dollarsInFlight = Math.trunc(
-    (impact.infectionsByRequestedTime
-    * data.avgDailyIncomePopulation
-    * data.avgDailyIncomeInUSD)
-    / period
+    (impact.infectionsByRequestedTime *
+      data.avgDailyIncomePopulation *
+      data.avgDailyIncomeInUSD) /
+      period
   );
   severeImpact.dollarsInFlight = Math.trunc(
-    (severeImpact.infectionsByRequestedTime
-    * data.avgDailyIncomePopulation
-    * data.avgDailyIncomeInUSD)
-    / period
+    (severeImpact.infectionsByRequestedTime *
+      data.avgDailyIncomePopulation *
+      data.avgDailyIncomeInUSD) /
+      period
   );
   const output = {
     data,
