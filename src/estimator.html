@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estimator Covid19</title>
+    <link href="cssEstimator.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+         <section>
+                <header>
+                        <h1>ESTIMATOR</h1>
+                           <p>COVID19</p>
+                    </header>
+          <form id="data-go-estimate">
+            <fieldset>
+                <legend>provide the needed information</legend>
+                <label for="population">population </label>
+                <input type="text" id="data-population" name="population" placeholder="population" autofocus>
+                <label for="timeToElapse">Time To Elapse</label>
+                <input type="tel" id="data-time-to-elapse" name="timeToElapse" placeholder="Time To Elapse">
+                <label for="reportedCases">Reported Cases</label>
+                <input type="text" id="data-reported-cases" name="reportedCases"placeholder="Reported Cases">
+                <label for="totalHospitalBeds">Total Hospital Beds</label>
+                <input type="text" id="data-total-hospital-beds" name="totalHospitalBeds"placeholder="Total Hospital Beds">
+            
+                    <label for="periodType">Period Type</label>
+                <select id="data-period-type" name="periodType">
+                    <option selected>Select one...</option>
+                    <option value="days">Days</option>
+                    <option value="Weeks">Weeks</option>
+                    <option value="months">Months</option>
+                </select>
+                
+                <input class="button" id="data-go-
+                estimate" type="submit" value="Estimate" >
+            
+            </fieldset>
+          </form>
+      
+         </section>
+         <aside>
+             <div class="aside">
+                    <img src="coro.jpg" alt="covid-19">
+             </div>
+             
+                    
+                
+         </aside>
+     
+
+    </div>
+     <script type="module "    src="jsEstimator.js"></script>
