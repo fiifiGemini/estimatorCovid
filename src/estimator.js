@@ -1,3 +1,4 @@
+/* eslint-disable no-tabs */
 const covid19ImpactEstimator = (data) => {
   let factor;
   const time = data.timeToElapse;
@@ -23,9 +24,9 @@ const covid19ImpactEstimator = (data) => {
     severeImpact.infectionsByRequestedTime * 0.15
   );
   impact.hospitalBedsByrequestedTime = impact.severeCasesByRequestedTime
-    * Math.trunc(data.totalhospitalBeds * 0.35);
+		* Math.trunc(data.totalhospitalBeds * 0.35);
   severeImpact.hospitalBedsByrequestedTime = severeImpact.severeCasesByRequestedTime
-    * Math.trunc(data.totalhospitalBeds * 0.35);
+		* Math.trunc(data.totalhospitalBeds * 0.35);
 
   impact.casesForICUByRequestedTime = Math.trunc(
     impact.infectionsByRequestedTime * 0.5
@@ -49,15 +50,15 @@ const covid19ImpactEstimator = (data) => {
   }
   impact.dollarsInFlight = Math.trunc(
     (impact.infectionsByRequestedTime
-      * data.avgDailyIncomePopulation
-      * data.avgDailyIncomeInUSD)
-      / period
+			* data.avgDailyIncomePopulation
+			* data.avgDailyIncomeInUSD)
+			/ period
   );
   severeImpact.dollarsInFlight = Math.trunc(
     (severeImpact.infectionsByRequestedTime
-      * data.avgDailyIncomePopulation
-      * data.avgDailyIncomeInUSD)
-      / period
+			* data.avgDailyIncomePopulation
+			* data.avgDailyIncomeInUSD)
+			/ period
   );
   const output = {
     data,
